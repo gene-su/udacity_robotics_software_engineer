@@ -1,4 +1,5 @@
 # P5-Home-Service-Robot
+Use package `gmapping` for slam mapping, package `amcl` to localize robot, and package `move_base` for navigation. In this project, we make the robot travel around the environment and achieve pick up and drop off tasks.
 
 ## Environment
 Ubuntu 18.04, ROS Melodic.
