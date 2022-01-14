@@ -20,6 +20,8 @@ catkin_make
 ```
 
 ## Usage
+Make sure you define the workspace path in the following scripts.
+
 ### test_slam.sh
 ```bash
 cd catkin_ws/src/scripts
