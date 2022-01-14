@@ -1,8 +1,12 @@
 #!/bin/sh
-gnome-terminal  -- bash -c "source /home/$USER/project5-home-service-robot/catkin_ws/devel/setup.bash && roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch" &
+
+# Define your workspace path
+catkin_ws_path="/home/workspace/catkin_ws"
+
+gnome-terminal  -- bash -c "cd ${catkin_ws_path} && source devel/setup.bash && roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch" &
 sleep 5
-gnome-terminal  -- bash -c "source /home/$USER/project5-home-service-robot/catkin_ws/devel/setup.bash && roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=/home/$USER/project5-home-service-robot/catkin_ws/src/map/stage_4.yaml"
+gnome-terminal  -- bash -c "cd ${catkin_ws_path} && source devel/setup.bash && roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=${catkin_ws_path}/src/map/stage_4.yaml"
 sleep 5
-gnome-terminal  -- bash -c "source /home/$USER/project5-home-service-robot/catkin_ws/devel/setup.bash && rosrun pick_objects pick_objects"
+gnome-terminal  -- bash -c "cd ${catkin_ws_path} && source devel/setup.bash && rosrun pick_objects pick_objects"
 
 
